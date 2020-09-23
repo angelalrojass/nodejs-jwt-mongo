@@ -6,7 +6,7 @@ import { authJwt} from "../midllewares";
 
 
 
-router.post('/',[authJwt.veryfyToken, authJwt.isModerador], productsCtrl.createProduct)
+router.post('/',[authJwt.veryfyToken, authJwt.isAdmin], productsCtrl.createProduct)
 router.get('/',productsCtrl.getProducts)
 router.get('/:productId',productsCtrl.getProductById)
 router.put('/:productId', [authJwt.veryfyToken, authJwt.isAdmin] , productsCtrl.updateProductById)
