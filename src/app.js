@@ -5,10 +5,12 @@ import productsRouters from './routes/products.routes'
 import authRouters from './routes/auth.routes'
 import {createRoles} from './libs/initialSetup'
 import userRoutes from './routes/user.routes'
-
+import cors from 'cors'
 const app=express()
 createRoles();
 
+
+app.use(cors());
 app.set('pkg',pkg);
 app.use(express.json());
 
